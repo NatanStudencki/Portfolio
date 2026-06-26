@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Imię Nazwisko — Rzeźba</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:Inter,sans-serif;
+background:#f7f5f2;
+color:#1f1f1f;
+
+}
+
+img{
+width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+nav{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:22px 8%;
+background:rgba(247,245,242,.85);
+backdrop-filter:blur(12px);
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-family:"Cormorant Garamond",serif;
+font-size:34px;
+
+}
+
+.menu{
+
+display:flex;
+gap:35px;
+
+font-size:.95rem;
+
+letter-spacing:.05em;
+
+text-transform:uppercase;
+
+}
+
+.hero{
+
+height:100vh;
+
+background:url("images/hero.jpg") center center/cover;
+
+display:flex;
+
+align-items:center;
+
+}
+
+.overlay{
+
+margin-left:8%;
+
+background:rgba(255,255,255,.82);
+
+padding:50px;
+
+max-width:520px;
+
+backdrop-filter:blur(6px);
+
+}
+
+h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:5rem;
+
+font-weight:400;
+
+line-height:.95;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:1.05rem;
+
+color:#555;
+
+margin-bottom:35px;
+
+}
+
+.button{
+
+display:inline-block;
+
+padding:14px 34px;
+
+border:1px solid #222;
+
+transition:.3s;
+
+}
+
+.button:hover{
+
+background:#222;
+
+color:white;
+
+}
+
+section{
+
+padding:120px 8%;
+
+}
+
+.section-title{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:3rem;
+
+margin-bottom:60px;
+
+}
+
+.about{
+
+display:grid;
+
+grid-template-columns:350px 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.about img{
+
+border-radius:10px;
+
+}
+
+.about p{
+
+font-size:1.05rem;
+
+line-height:1.9;
+
+color:#555;
+
+}
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+.card{
+
+background:white;
+
+overflow:hidden;
+
+box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card img{
+
+height:420px;
+
+object-fit:cover;
+
+}
+
+.info{
+
+padding:24px;
+
+}
+
+.info h3{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:2rem;
+
+margin-bottom:10px;
+
+}
+
+.info p{
+
+color:#666;
+
+}
+
+.contact{
+
+text-align:center;
+
+}
+
+.contact h2{
+
+margin-bottom:25px;
+
+}
+
+.contact p{
+
+font-size:1.05rem;
+
+line-height:2;
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+color:#888;
+
+font-size:.9rem;
+
+}
+
+@media(max-width:900px){
+
+.about{
+
+grid-template-columns:1fr;
+
+}
+
+h1{
+
+font-size:3.5rem;
+
+}
+
+.overlay{
+
+margin:30px;
+
+}
+
+.menu{
+
+display:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+Imię Nazwisko
+</div>
+
+<div class="menu">
+
+<a href="#about">O mnie</a>
+
+<a href="#works">Prace</a>
+
+<a href="#contact">Kontakt</a>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="overlay">
+
+<h1>
+Rzeźba<br>
+Forma<br>
+Przestrzeń
+</h1>
+
+<p>
+
+Tworzę obiekty balansujące pomiędzy materią,
+światłem i przestrzenią.
+
+</p>
+
+<a class="button" href="#works">
+Zobacz portfolio
+</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">
+O mnie
+</h2>
+
+<div class="about">
+
+<img src="images/portret.jpg">
+
+<p>
+
+Jestem rzeźbiarzem zainteresowanym relacją
+człowieka z przestrzenią oraz materialnością form.
+Pracuję w kamieniu, drewnie, gipsie oraz ceramice.
+Moje realizacje obejmują rzeźbę, instalacje i obiekty
+site-specific.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="works">
+
+<h2 class="section-title">
+
+Wybrane realizacje
+
+</h2>
+
+<div class="gallery">
+
+<div class="card">
+
+<img src="images/praca1.jpg">
+
+<div class="info">
+
+<h3>Forma I</h3>
+
+<p>Kamień · 2026</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/praca2.jpg">
+
+<div class="info">
+
+<h3>Echo</h3>
+
+<p>Ceramika · 2025</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/praca3.jpg">
+
+<div class="info">
+
+<h3>Dyplom</h3>
+
+<p>Instalacja · 2026</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/praca4.jpg">
+
+<div class="info">
+
+<h3>Przestrzeń</h3>
+
+<p>Drewno · 2024</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">
+
+Kontakt
+
+</h2>
+
+<p>
+
+mail@example.com
+
+<br><br>
+
+Instagram: @twojprofil
+
+<br>
+
+Behance / GitHub / ArtStation (opcjonalnie)
+
+</p>
+
+</section>
+
+<footer>
+
+© 2026 Imię Nazwisko
+
+</footer>
+
+</body>
+</html>
