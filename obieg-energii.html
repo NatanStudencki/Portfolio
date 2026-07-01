@@ -15,10 +15,11 @@ h1{
 }
 
 body{
-    font-family: "Cormorant Garamond", serif;
+    font-family:"Cormorant Garamond", serif;
     max-width:1000px;
     margin:auto;
     padding:50px;
+    padding-top:90px;
     background:#f7f5f2;
 }
 
@@ -28,10 +29,14 @@ img{
     border-radius:8px;
 }
 nav{
-    position:sticky;
+
+    position:fixed;
     top:0;
     left:0;
     width:100%;
+
+    display:flex;
+    align-items:center;
 
     padding:22px 8%;
 
@@ -39,23 +44,28 @@ nav{
     backdrop-filter:blur(12px);
 
     z-index:1000;
+
 }
 
 .logo{
+
     font-family:"Cormorant Garamond", serif;
     font-size:34px;
+    font-weight:400;
     text-decoration:none;
     color:#1f1f1f;
+
 }
 </style>
 
 </head>
 
 <body>
+
 <nav>
 
 <a href="index.html" class="logo">
-    Natan Studencki
+Natan Studencki
 </a>
 
 </nav>
