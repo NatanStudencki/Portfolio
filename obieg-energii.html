@@ -7,6 +7,57 @@
 <title>Obieg energii</title>
 
 <style>
+.lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+}
+
+.lightbox .close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:40px;
+    color:white;
+    cursor:pointer;
+}
+
+.lightbox .prev,
+.lightbox .next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:50px;
+    color:white;
+    cursor:pointer;
+    padding:10px;
+    user-select:none;
+}
+
+.lightbox .prev{ left:20px; }
+.lightbox .next{ right:20px; }
+
+.lightbox-img{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.lightbox-img:hover{
+    transform:scale(1.02);
+}
+
 h1{
     text-align:center;
     font-size:4rem;
@@ -116,17 +167,70 @@ Natan Studencki
 
 <section class="work-gallery">
 
-    <img src="images/1.png" alt="">
-    <img src="images/5.png" alt="">
-    <img src="images/11.png" alt="">
-    <img src="images/12.png" alt="">
-    <img src="images/13.png" alt="">
+    <img src="images/1.png" class="lightbox-img" data-index="0">
+    <img src="images/5.png" class="lightbox-img" data-index="1">
+    <img src="images/11.png" class="lightbox-img" data-index="2">
+    <img src="images/12.png" class="lightbox-img" data-index="3">
+    <img src="images/13.png" class="lightbox-img" data-index="4">
 
 </section>
 
 <a href="index.html">
 ← Powrót do portfolio
 </a>
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img">
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+</div>
+
+<script>
+const images = document.querySelectorAll(".lightbox-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+let currentIndex = 0;
+
+function showImage(index){
+    currentIndex = index;
+    lightboxImg.src = images[index].src;
+    lightbox.style.display = "flex";
+}
+
+images.forEach(img => {
+    img.addEventListener("click", () => {
+        showImage(parseInt(img.dataset.index));
+    });
+});
+
+document.querySelector(".close").onclick = () => {
+    lightbox.style.display = "none";
+};
+
+document.querySelector(".prev").onclick = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+};
+
+document.querySelector(".next").onclick = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+};
+
+document.addEventListener("keydown", (e) => {
+    if(lightbox.style.display === "flex"){
+        if(e.key === "Escape") lightbox.style.display = "none";
+        if(e.key === "ArrowLeft") document.querySelector(".prev").click();
+        if(e.key === "ArrowRight") document.querySelector(".next").click();
+    }
+});
+
+lightbox.addEventListener("click", (e) => {
+    if(e.target === lightbox) lightbox.style.display = "none";
+});
+</script>
 
 </body>
 
